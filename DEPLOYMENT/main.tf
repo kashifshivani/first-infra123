@@ -5,6 +5,13 @@ module "rg" {
 
 }
 
+module "rg1" {
+  source                  = "../TEST/azure_rg"
+  resource_group_name     = "kash-rg1"
+  resource_group_location = "indonesia central"
+
+}
+
 module "vnet" {
   depends_on          = [module.rg]
   source              = "../TEST/azure_vnet"
